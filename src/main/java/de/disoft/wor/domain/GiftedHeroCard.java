@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class GiftedHeroCard extends HeroCard implements HasAbility {
-    private String ability;
+    private Ability ability;
 
     @JsonCreator
     public GiftedHeroCard(
@@ -23,20 +23,30 @@ public class GiftedHeroCard extends HeroCard implements HasAbility {
             @JsonProperty("mana")
                     int mana,
             @JsonProperty("ability")
-                    String ability) {
+                    Ability ability) {
         super(id, name, description, race, health, damage, mana);
         this.ability = ability;
     }
 
     @Override
-    public String getAbility() {
-        return null;
+    public String getAbilityName() {
+        return ability.getName();
+    }
+
+    @Override
+    public String getAbilityDescription() {
+        return ability.getDescription();
+    }
+
+    @Override
+    public String getAbilityValue() {
+        return ability.getValue();
     }
 
     @Override
     public String toString() {
-        return "GiftedHeroCard{" +
-                "ability='" + ability + '\'' +
+        return "\nGiftedHeroCard { " +
+                ability.toString() + '\'' +
                 "} " + super.toString();
     }
 

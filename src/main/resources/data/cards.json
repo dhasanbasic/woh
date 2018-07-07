@@ -28,31 +28,47 @@
       "health": 500,
       "damage": 210,
       "mana": 150,
-      "ability": "D+25|M-25"
+      "ability" : {
+        "name": "Unknown Power",
+        "description": "Rems rage is raising, so does his damage for 25 points. Costs 25 mana points.",
+        "value": "D+25|M-25"
+      }
     },
     {
       "id": "H102",
       "name": "Sirius",
-      "description": "A star hero.",
+      "description": "A star hero is born.",
       "race": "Solar",
       "health": 580,
       "damage": 185,
       "mana": 170,
-      "ability": "H+25|M-20"
+      "ability" : {
+        "name": "Starstruck",
+        "description": "Sirius summons 25 stars from the sky raising his health 25 points. Costs 20 mana points.",
+        "value": "H+25|M-20"
+      }
     }
   ],
   "weapons": [
     {
       "id": "W001",
-      "name": "Rakk",
-      "description": "Arrow of despair.",
-      "ability": "H+50"
+      "name": "Rakal",
+      "description": "Arrow of Despair.",
+      "ability" : {
+        "name": "Big Shot",
+        "description": "An arrow of the demon Lucifer is shot at an opponent damaging 50 points. Costs 65 mana points.",
+        "value": "H-50|M-65"
+      }
     },
     {
       "id": "W002",
       "name": "Xen",
-      "description": "Sword for revenge.",
-      "ability": "D+10%|M-40"
+      "description": "Sword of Revenge.",
+      "ability" : {
+        "name": "Day D",
+        "description": "Each turn the holder of the sword gets damage increased for 10 %. Costs 40 mana points each turn.",
+        "value": "D+10%|M-40"
+      }
     }
   ]
 }

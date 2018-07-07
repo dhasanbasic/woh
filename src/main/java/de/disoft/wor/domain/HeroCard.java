@@ -53,11 +53,11 @@ public class HeroCard extends AbstractCard {
 
     @Override
     public String toString() {
-        return "HeroCard{" +
-                "race=" + race +
-                ", health=" + health +
-                ", damage=" + damage +
-                ", mana=" + mana +
-                "} " + super.toString();
+        return "\nHeroCard { " +
+                "race = " + race +
+                ", health = " + health +
+                ", damage = " + damage +
+                ", mana = " + mana +
+                " } " + super.toString();
     }
 }
