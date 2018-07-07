@@ -1,0 +1,58 @@
+{
+  "normalHeroes": [
+    {
+      "id": "H001",
+      "name": "Kafal",
+      "description": "Hero from the night.",
+      "race": "Nocturnal",
+      "health": 500,
+      "damage": 200,
+      "mana": 150
+    },
+    {
+      "id": "H002",
+      "name": "Bright",
+      "description": "Hero of the daylight.",
+      "race": "Daylighter",
+      "health": 600,
+      "damage": 180,
+      "mana": 170
+    }
+  ],
+  "giftedHeroes": [
+    {
+      "id": "H101",
+      "name": "Rem",
+      "description": "A hero with unknown powers.",
+      "race": "Enigma",
+      "health": 500,
+      "damage": 210,
+      "mana": 150,
+      "ability": "D+25|M-25"
+    },
+    {
+      "id": "H102",
+      "name": "Sirius",
+      "description": "A star hero.",
+      "race": "Solar",
+      "health": 580,
+      "damage": 185,
+      "mana": 170,
+      "ability": "H+25|M-20"
+    }
+  ],
+  "weapons": [
+    {
+      "id": "W001",
+      "name": "Rakk",
+      "description": "Arrow of despair.",
+      "ability": "H+50"
+    },
+    {
+      "id": "W002",
+      "name": "Xen",
+      "description": "Sword for revenge.",
+      "ability": "D+10%|M-40"
+    }
+  ]
+}

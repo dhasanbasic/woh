@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Nocturnal",
+    "ability": "D+20|H+10%",
+    "description": "Creature of the night with more damage and increased health."
+  },
+  {
+    "name": "Daylighter",
+    "ability": "D-10%|H+10%|M+10%",
+    "description": "Light creature, less power but hard to kill."
+  },
+  {
+    "name": "Solar",
+    "ability": "H+100|M+15%",
+    "description": "Creature that uses the power of the suns, more healthy and increased mana."
+  },
+  {
+    "name": "Enigma",
+    "ability": "D*+20%",
+    "description": "A creature of unknown origin, with random increased damage (0-20%)."
+  },
+  {
+    "name": "Gaia",
+    "ability": null,
+    "description": "Creature of nature."
+  },
+  {
+    "name": "Atlantic",
+    "ability": null,
+    "description": "Water creature."
+  },
+  {
+    "name": "Stellar",
+    "ability": null,
+    "description": "A divine creature."
+  }
+]
