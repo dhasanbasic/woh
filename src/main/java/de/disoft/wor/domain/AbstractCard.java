@@ -2,9 +2,7 @@ package de.disoft.wor.domain;
 
 public abstract class AbstractCard {
     private String id;
-
     private String name;
-
     private String description;
 
     AbstractCard(String id, String name, String description) {
@@ -27,10 +25,6 @@ public abstract class AbstractCard {
 
     @Override
     public String toString() {
-        return "\nAbstractCard { " +
-                "id = '" + id + '\'' +
-                ", name = '" + name + '\'' +
-                ", description = '" + description + '\'' +
-                " }\n";
+        return "\nAbstractCard { id = '" + id + "', name = '" + name + "', description = '" + description + "' }\n";
     }
 }

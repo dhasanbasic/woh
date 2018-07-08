@@ -2,8 +2,9 @@ package de.disoft.wor.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.disoft.wor.service.loader.RaceLoader;
 
-public class GiftedHeroCard extends HeroCard implements HasAbility {
+public class GiftedHeroCard extends HeroCard {
     private Ability ability;
 
     @JsonCreator
@@ -28,26 +29,13 @@ public class GiftedHeroCard extends HeroCard implements HasAbility {
         this.ability = ability;
     }
 
-    @Override
-    public String getAbilityName() {
-        return ability.getName();
-    }
-
-    @Override
-    public String getAbilityDescription() {
-        return ability.getDescription();
-    }
-
-    @Override
-    public String getAbilityValue() {
-        return ability.getValue();
+    public Ability getAbility() {
+        return ability;
     }
 
     @Override
     public String toString() {
-        return "\nGiftedHeroCard { " +
-                ability.toString() + '\'' +
-                "} " + super.toString();
+        return "\nGiftedHeroCard { " + ability + " } " + super.toString();
     }
 
 }

@@ -1,21 +1,18 @@
 package de.disoft.wor.domain;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
+
 public class Cards {
     private List<HeroCard> normalHeroes;
-
     private List<GiftedHeroCard> giftedHeroes;
-
     private List<WeaponCard> weapons;
-
-    private Map<String, AbstractCard> allCards;
+    private HashMap<String, AbstractCard> allCards;
 
     @JsonCreator
     public Cards(
@@ -33,9 +30,9 @@ public class Cards {
 
     private void init() {
         allCards = new HashMap<>();
-        normalHeroes.stream().forEach(c -> allCards.put(c.getId(), c));
-        giftedHeroes.stream().forEach(c -> allCards.put(c.getId(), c));
-        weapons.stream().forEach(c -> allCards.put(c.getId(), c));
+        normalHeroes.stream().filter(Objects::nonNull).forEach(card -> allCards.put(card.getId(), card));
+        giftedHeroes.stream().filter(Objects::nonNull).forEach(card -> allCards.put(card.getId(), card));
+        weapons.stream().filter(Objects::nonNull).forEach(card -> allCards.put(card.getId(), card));
     }
 
     public List<HeroCard> getNormalHeroes() {

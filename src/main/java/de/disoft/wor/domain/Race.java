@@ -5,10 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Race {
     private String name;
-
     private String description;
-
-    private String ability;
+    private Ability ability;
 
     @JsonCreator
     public Race(
@@ -17,7 +15,7 @@ public class Race {
             @JsonProperty("description")
                     String description,
             @JsonProperty("ability")
-                    String ability) {
+                    Ability ability) {
         this.name = name;
         this.description = description;
         this.ability = ability;
@@ -31,16 +29,16 @@ public class Race {
         return description;
     }
 
-    public String getAbility() {
+    public Ability getAbility() {
         return ability;
     }
 
     @Override
     public String toString() {
-        return "Race{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", ability='" + ability + '\'' +
-                '}';
+        return "race : { " +
+                "name = '" + name + "', " +
+                "description = '" + description + "', " +
+                ability.toString() +
+                " }";
     }
 }

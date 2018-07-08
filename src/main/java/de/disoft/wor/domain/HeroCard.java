@@ -2,14 +2,12 @@ package de.disoft.wor.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.disoft.wor.service.loader.RaceLoader;
 
 public class HeroCard extends AbstractCard {
     private Race race;
-
     private int health;
-
     private int damage;
-
     private int mana;
 
     @JsonCreator
@@ -29,7 +27,7 @@ public class HeroCard extends AbstractCard {
             @JsonProperty("mana")
                     int mana) {
         super(id, name, description);
-        this.race = null;
+        this.race = RaceLoader.getRaces().getRaceByName(race);
         this.health = health;
         this.damage = damage;
         this.mana = mana;

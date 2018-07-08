@@ -3,7 +3,7 @@ package de.disoft.wor.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class WeaponCard extends AbstractCard implements HasAbility {
+public class WeaponCard extends AbstractCard {
     private Ability ability;
 
     @JsonCreator
@@ -20,19 +20,8 @@ public class WeaponCard extends AbstractCard implements HasAbility {
         this.ability = ability;
     }
 
-    @Override
-    public String getAbilityName() {
-        return ability.getName();
-    }
-
-    @Override
-    public String getAbilityDescription() {
-        return ability.getDescription();
-    }
-
-    @Override
-    public String getAbilityValue() {
-        return ability.getValue();
+    public Ability getAbility() {
+        return ability;
     }
 
     @Override
