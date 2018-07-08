@@ -27,10 +27,10 @@ public abstract class AbstractCard {
 
     @Override
     public String toString() {
-        return "AbstractCard{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return "\nAbstractCard { " +
+                "id = '" + id + '\'' +
+                ", name = '" + name + '\'' +
+                ", description = '" + description + '\'' +
+                " }\n";
     }
 }

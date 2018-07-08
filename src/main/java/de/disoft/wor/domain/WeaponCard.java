@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class WeaponCard extends AbstractCard implements HasAbility {
-    private String ability;
+    private Ability ability;
 
     @JsonCreator
     public WeaponCard(
@@ -15,20 +15,30 @@ public class WeaponCard extends AbstractCard implements HasAbility {
             @JsonProperty("description")
                     String description,
             @JsonProperty("ability")
-                    String ability) {
+                    Ability ability) {
         super(id, name, description);
         this.ability = ability;
     }
 
     @Override
-    public String getAbility() {
-        return ability;
+    public String getAbilityName() {
+        return ability.getName();
+    }
+
+    @Override
+    public String getAbilityDescription() {
+        return ability.getDescription();
+    }
+
+    @Override
+    public String getAbilityValue() {
+        return ability.getValue();
     }
 
     @Override
     public String toString() {
-        return "WeaponCard{" +
-                "ability='" + ability + '\'' +
+        return "\nWeaponCard { " +
+                ability.toString() + '\'' +
                 "} " + super.toString();
     }
 }
