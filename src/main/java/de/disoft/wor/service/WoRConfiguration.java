@@ -7,7 +7,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,15 +16,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.disoft.wor.domain.Cards;
 import de.disoft.wor.domain.Race;
 
-@Service
+@Component
 public class WoRConfiguration {
-    private final static String RACES_JSON = "data/races.json";
-
-    private final static String CARDS_JSON = "data/cards.json";
-
     private HashMap<String, Race> races;
 
     private Cards cards;
+
+    @Value("${wor.data.races}")
+    private String racesJson;
+
+    @Value("${wor.data.cards}")
+    private String cardsJson;
+
+    @Value("${wor.game.numPlayers}")
+    private int numPlayers;
+
+    @Value("${wor.game.lifePoints}")
+    private int lifePoints;
 
     private WoRConfiguration() {
 
@@ -41,7 +50,7 @@ public class WoRConfiguration {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            List<Race> raceList = mapper.readValue(ClassLoader.getSystemResource(RACES_JSON), raceTypeReference);
+            List<Race> raceList = mapper.readValue(ClassLoader.getSystemResource(racesJson), raceTypeReference);
             return createRaceMap(raceList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,7 +69,7 @@ public class WoRConfiguration {
     private void loadCards() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            this.cards = mapper.readValue(ClassLoader.getSystemResource(CARDS_JSON), Cards.class);
+            this.cards = mapper.readValue(ClassLoader.getSystemResource(cardsJson), Cards.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,5 +81,13 @@ public class WoRConfiguration {
 
     public Cards getCards() {
         return cards;
+    }
+
+    public int getNumPlayers() {
+        return numPlayers;
+    }
+
+    public int getLifePoints() {
+        return lifePoints;
     }
 }

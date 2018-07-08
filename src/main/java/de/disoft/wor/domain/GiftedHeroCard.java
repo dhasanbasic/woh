@@ -39,5 +39,4 @@ public class GiftedHeroCard extends HeroCard implements HasAbility {
                 "ability='" + ability + '\'' +
                 "} " + super.toString();
     }
-
 }
