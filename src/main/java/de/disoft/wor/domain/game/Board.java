@@ -16,7 +16,11 @@ public class Board {
         heroesByPlayer.put(player, new ArrayList<>());
     }
 
-    public List<HeroPlacement> getHeroesForPlayer(Player player) {
+    public void addAssignment(Player player, HeroPlacement heroPlacement) {
+        heroesByPlayer.get(player).add(heroPlacement);
+    }
+
+    public List<HeroPlacement> getHeroPlacementsForPlayer(Player player) {
         return heroesByPlayer.get(player);
     }
 }

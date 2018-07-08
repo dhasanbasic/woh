@@ -14,12 +14,15 @@ public class HeroPlacement {
     private boolean hasWeapon;
     private Ability weaponAbility;
 
+    public HeroPlacement(Player player) {
+        this.player = player;
+    }
+
     public Player getPlayer() {
         return player;
     }
 
-    public void setHeroCard(Player player, HeroCard heroCard) {
-        this.player = player;
+    public void setHeroCard(HeroCard heroCard) {
         this.heroCard = heroCard;
         health = heroCard.getHealth();
         damage = heroCard.getDamage();

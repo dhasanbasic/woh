@@ -41,4 +41,12 @@ public class Player {
     public void setLifePoints(int lifePoints) {
         this.lifePoints = lifePoints;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", lifePoints=" + lifePoints +
+                '}';
+    }
 }
