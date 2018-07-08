@@ -37,5 +37,4 @@ public class GiftedHeroCard extends HeroCard {
     public String toString() {
         return "\nGiftedHeroCard { " + ability + " } " + super.toString();
     }
-
 }

@@ -10,10 +10,22 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
 
-@Service
+@Component
 public class WoRConfiguration {
     private Races races;
     private Cards cards;
+
+    @Value("${wor.data.races}")
+    private String racesJson;
+
+    @Value("${wor.data.cards}")
+    private String cardsJson;
+
+    @Value("${wor.game.numPlayers}")
+    private int numPlayers;
+
+    @Value("${wor.game.lifePoints}")
+    private int lifePoints;
 
     private WoRConfiguration() {
     }
@@ -30,5 +42,13 @@ public class WoRConfiguration {
 
     public Cards getCards() {
         return cards;
+    }
+
+    public int getNumPlayers() {
+        return numPlayers;
+    }
+
+    public int getLifePoints() {
+        return lifePoints;
     }
 }
