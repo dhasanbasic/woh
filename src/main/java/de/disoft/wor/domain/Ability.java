@@ -35,10 +35,6 @@ public class Ability {
 
     @Override
     public String toString() {
-        return "ability : { " +
-                "name = '" + name + "', " +
-                "description = '" + description + "', " +
-                "value = '" + value + "'" +
-                " } ";
+        return "ability : { " + "name = '" + name + "', " + "description = '" + description + "', " + "value = '" + value + "' } ";
     }
 }

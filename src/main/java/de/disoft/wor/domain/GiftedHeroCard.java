@@ -2,7 +2,6 @@ package de.disoft.wor.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.disoft.wor.service.loader.RaceLoader;
 
 public class GiftedHeroCard extends HeroCard {
     private Ability ability;
@@ -15,8 +14,8 @@ public class GiftedHeroCard extends HeroCard {
                     String name,
             @JsonProperty("description")
                     String description,
-            @JsonProperty("race")
-                    String race,
+            @JsonProperty("raceName")
+                    String raceName,
             @JsonProperty("health")
                     int health,
             @JsonProperty("damage")
@@ -25,7 +24,7 @@ public class GiftedHeroCard extends HeroCard {
                     int mana,
             @JsonProperty("ability")
                     Ability ability) {
-        super(id, name, description, race, health, damage, mana);
+        super(id, name, description, raceName, health, damage, mana);
         this.ability = ability;
     }
 
@@ -37,5 +36,4 @@ public class GiftedHeroCard extends HeroCard {
     public String toString() {
         return "\nGiftedHeroCard { " + ability + " } " + super.toString();
     }
-
 }

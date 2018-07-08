@@ -26,8 +26,6 @@ public class WeaponCard extends AbstractCard {
 
     @Override
     public String toString() {
-        return "\nWeaponCard { " +
-                ability.toString() + '\'' +
-                "} " + super.toString();
+        return "\nWeaponCard { " + ability + " } " + super.toString();
     }
 }

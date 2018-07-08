@@ -11,7 +11,7 @@ public abstract class AbstractCard {
         this.description = description;
     }
 
-    public String getId() {
+    String getId() {
         return id;
     }
 

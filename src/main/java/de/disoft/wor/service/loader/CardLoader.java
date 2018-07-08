@@ -2,28 +2,33 @@ package de.disoft.wor.service.loader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.disoft.wor.domain.Cards;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 
+@Service
 public final class CardLoader {
-    private static final String CARDS_JSON = "data/cards.json";
-    private static Cards cards = null;
+
+    private Cards cards;
+
+    @Value("${wor.data.cards}")
+    private String cardsJson;
 
     private CardLoader() {
     }
 
-    public static Cards getCards() {
-        if (cards == null) {
-            loadCards();
-        }
-        return cards;
-    }
-
-    private static void loadCards() {
+    @PostConstruct
+    public void loadCards() {
         try {
-            cards = new ObjectMapper().readValue(ClassLoader.getSystemResource(CARDS_JSON), Cards.class);
+            cards = new ObjectMapper().readValue(ClassLoader.getSystemResource(cardsJson), Cards.class);
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+    }
+
+    public Cards getCards() {
+        return cards;
     }
 }

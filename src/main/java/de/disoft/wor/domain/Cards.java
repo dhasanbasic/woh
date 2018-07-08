@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 public class Cards {
     private List<HeroCard> normalHeroes;
@@ -30,9 +29,9 @@ public class Cards {
 
     private void init() {
         allCards = new HashMap<>();
-        normalHeroes.stream().filter(Objects::nonNull).forEach(card -> allCards.put(card.getId(), card));
-        giftedHeroes.stream().filter(Objects::nonNull).forEach(card -> allCards.put(card.getId(), card));
-        weapons.stream().filter(Objects::nonNull).forEach(card -> allCards.put(card.getId(), card));
+        normalHeroes.forEach(card -> allCards.put(card.getId(), card));
+        giftedHeroes.forEach(card -> allCards.put(card.getId(), card));
+        weapons.forEach(card -> allCards.put(card.getId(), card));
     }
 
     public List<HeroCard> getNormalHeroes() {

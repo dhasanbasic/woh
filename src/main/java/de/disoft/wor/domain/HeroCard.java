@@ -2,24 +2,24 @@ package de.disoft.wor.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.disoft.wor.service.loader.RaceLoader;
 
 public class HeroCard extends AbstractCard {
     private Race race;
+    private String raceName;
     private int health;
     private int damage;
     private int mana;
 
     @JsonCreator
-    public HeroCard(
+    HeroCard(
             @JsonProperty("id")
                     String id,
             @JsonProperty("name")
                     String name,
             @JsonProperty("description")
                     String description,
-            @JsonProperty("race")
-                    String race,
+            @JsonProperty("raceName")
+                    String raceName,
             @JsonProperty("health")
                     int health,
             @JsonProperty("damage")
@@ -27,7 +27,8 @@ public class HeroCard extends AbstractCard {
             @JsonProperty("mana")
                     int mana) {
         super(id, name, description);
-        this.race = RaceLoader.getRaces().getRaceByName(race);
+        this.race = null;
+        this.raceName = raceName;
         this.health = health;
         this.damage = damage;
         this.mana = mana;
@@ -35,6 +36,14 @@ public class HeroCard extends AbstractCard {
 
     public Race getRace() {
         return race;
+    }
+
+    public String getRaceName() {
+        return raceName;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
     }
 
     public int getHealth() {
@@ -51,11 +60,6 @@ public class HeroCard extends AbstractCard {
 
     @Override
     public String toString() {
-        return "\nHeroCard { " +
-                "race = " + race +
-                ", health = " + health +
-                ", damage = " + damage +
-                ", mana = " + mana +
-                " } " + super.toString();
+        return "\nHeroCard { " + race + ", health = '" + health + "', damage = '" + damage + "', mana = '" + mana + "' } " + super.toString();
     }
 }

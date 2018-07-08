@@ -35,10 +35,6 @@ public class Race {
 
     @Override
     public String toString() {
-        return "race : { " +
-                "name = '" + name + "', " +
-                "description = '" + description + "', " +
-                ability.toString() +
-                " }";
+        return "race : { " + "name = '" + name + "', " + "description = '" + description + "', " + ability + " }";
     }
 }
