@@ -54,5 +54,8 @@ public class WoRGame {
     public void addPlayer(String name, List<AbstractCard> deck) {
         Player player = new Player(name, configuration.getLifePoints());
         player.setDeck(deck);
+        players.add(player);
+        board.addPlayer(player);
+        battle.addPlayer(player);
     }
 }

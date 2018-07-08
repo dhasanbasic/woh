@@ -39,29 +39,17 @@
     {
       "name": "Gaia",
       "description": "Creature of nature.",
-      "ability": {
-        "name" : null,
-        "description": null,
-        "value": null
-      }
+      "ability": null
     },
     {
       "name": "Atlantic",
       "description": "Water creature.",
-      "ability": {
-        "name" : null,
-        "description": null,
-        "value": null
-      }
+      "ability": null
     },
     {
       "name": "Stellar",
       "description": "A divine creature.",
-      "ability": {
-        "name" : null,
-        "description": null,
-        "value": null
-      }
+      "ability": null
     }
   ]
 }
