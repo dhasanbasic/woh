@@ -1,6 +1,9 @@
 package de.disoft.wor;
 
 import de.disoft.wor.domain.*;
+import de.disoft.wor.domain.card.GiftedHeroCard;
+import de.disoft.wor.domain.card.HeroCard;
+import de.disoft.wor.domain.card.WeaponCard;
 import de.disoft.wor.service.WoRConfiguration;
 import org.junit.Assert;
 import org.junit.Test;

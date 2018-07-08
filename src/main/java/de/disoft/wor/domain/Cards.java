@@ -2,6 +2,10 @@ package de.disoft.wor.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.disoft.wor.domain.card.AbstractCard;
+import de.disoft.wor.domain.card.GiftedHeroCard;
+import de.disoft.wor.domain.card.HeroCard;
+import de.disoft.wor.domain.card.WeaponCard;
 
 import java.util.Collection;
 import java.util.HashMap;

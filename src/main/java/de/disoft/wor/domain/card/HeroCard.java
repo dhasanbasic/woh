@@ -1,7 +1,9 @@
-package de.disoft.wor.domain;
+package de.disoft.wor.domain.card;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.disoft.wor.domain.Race;
+import de.disoft.wor.domain.card.AbstractCard;
 
 public class HeroCard extends AbstractCard {
     private Race race;
@@ -11,7 +13,7 @@ public class HeroCard extends AbstractCard {
     private int mana;
 
     @JsonCreator
-    HeroCard(
+    public HeroCard(
             @JsonProperty("id")
                     String id,
             @JsonProperty("name")

@@ -1,6 +1,9 @@
 package de.disoft.wor.service;
 
 import de.disoft.wor.domain.*;
+import de.disoft.wor.domain.card.GiftedHeroCard;
+import de.disoft.wor.domain.card.HeroCard;
+import de.disoft.wor.domain.card.WeaponCard;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

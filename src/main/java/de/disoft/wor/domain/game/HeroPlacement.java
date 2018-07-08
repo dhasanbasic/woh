@@ -1,8 +1,8 @@
 package de.disoft.wor.domain.game;
 
 import de.disoft.wor.domain.Ability;
-import de.disoft.wor.domain.HeroCard;
-import de.disoft.wor.domain.WeaponCard;
+import de.disoft.wor.domain.card.HeroCard;
+import de.disoft.wor.domain.card.WeaponCard;
 
 public class HeroPlacement {
     private Player player;

@@ -1,11 +1,11 @@
-package de.disoft.wor.domain;
+package de.disoft.wor.domain.card;
 
 public abstract class AbstractCard {
     private String id;
     private String name;
     private String description;
 
-    AbstractCard(String id, String name, String description) {
+    protected AbstractCard(String id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;

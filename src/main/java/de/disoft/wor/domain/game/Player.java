@@ -1,6 +1,6 @@
 package de.disoft.wor.domain.game;
 
-import de.disoft.wor.domain.AbstractCard;
+import de.disoft.wor.domain.card.AbstractCard;
 
 import java.util.ArrayList;
 import java.util.List;

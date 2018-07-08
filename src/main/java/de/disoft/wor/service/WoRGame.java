@@ -1,6 +1,6 @@
 package de.disoft.wor.service;
 
-import de.disoft.wor.domain.AbstractCard;
+import de.disoft.wor.domain.card.AbstractCard;
 import de.disoft.wor.domain.game.Battle;
 import de.disoft.wor.domain.game.Board;
 import de.disoft.wor.domain.game.Player;

@@ -10,19 +10,17 @@ import java.util.Objects;
 
 public class Races {
     private HashMap<String, Race> allRaces;
-    private List<Race> allRacesList;
 
     @JsonCreator
     public Races(
             @JsonProperty("allRaces")
                     List<Race> allRaces) {
-        this.allRacesList = allRaces;
-        init();
+        init(allRaces);
     }
 
-    private void init() {
-        allRaces = new HashMap<>();
-        allRacesList.stream().filter(Objects::nonNull).forEach(race -> allRaces.put(race.getName(), race));
+    private void init(List<Race> allRaces) {
+        this.allRaces = new HashMap<>();
+        allRaces.stream().filter(Objects::nonNull).forEach(race -> this.allRaces.put(race.getName(), race));
     }
 
     public Collection<Race> getAll() {
