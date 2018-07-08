@@ -35,7 +35,7 @@ public class HeroPlacement {
     public void setWeaponCard(WeaponCard weaponCard) {
         this.weaponCard = weaponCard;
         hasWeapon = (weaponCard != null);
-        weaponAbility = hasWeapon ? weaponCard.getAbility() : null;
+        weaponAbility = hasWeapon ? weaponCard.getAbilityValue() : null;
     }
 
     public int getHealth() {

@@ -33,9 +33,9 @@ public class Cards {
 
     private void init() {
         allCards = new HashMap<>();
-        normalHeroes.stream().forEach(c -> allCards.put(c.getId(), c));
-        giftedHeroes.stream().forEach(c -> allCards.put(c.getId(), c));
-        weapons.stream().forEach(c -> allCards.put(c.getId(), c));
+        normalHeroes.forEach(c -> allCards.put(c.getId(), c));
+        giftedHeroes.forEach(c -> allCards.put(c.getId(), c));
+        weapons.forEach(c -> allCards.put(c.getId(), c));
     }
 
     public List<HeroCard> getNormalHeroes() {
