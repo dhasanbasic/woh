@@ -11,8 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class WoRApplication {
-    @Autowired
-    private WoRConfiguration worConfiguration;
+
     @Autowired
     private BeanFactory beanFactory;
 
@@ -25,9 +24,9 @@ public class WoRApplication {
         return args -> {
             WoRGame game = beanFactory.getBean(WoRGame.class);
             System.out.println("--------------------\nRACES\n-------------------");
-            worConfiguration.getRaces().getAll().forEach(System.out::println);
+            game.getConfiguration().getRaces().getAll().forEach(System.out::println);
             System.out.println("\n--------------------\nCARDS\n-------------------");
-            worConfiguration.getCards().getAll().forEach(System.out::println);
+            game.getConfiguration().getCards().getAll().forEach(System.out::println);
             System.out.println();
             System.out.println("--------------------\nGAME\n-------------------");
             System.out.println("Number of players:     " + game.getConfiguration().getNumPlayers());

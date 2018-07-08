@@ -39,7 +39,6 @@ public class WoRConfiguration {
         cards.getGiftedHeroes().forEach(giftedHeroCard -> giftedHeroCard.setRace(races.getRaceByName(giftedHeroCard.getRaceName())));
     }
 
-
     @Autowired
     public void setRaceLoader(RaceLoader raceLoader) {
         this.raceLoader = raceLoader;
