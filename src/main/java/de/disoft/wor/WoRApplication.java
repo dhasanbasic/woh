@@ -1,6 +1,7 @@
 package de.disoft.wor;
 
 import de.disoft.wor.domain.Cards;
+import de.disoft.wor.domain.event.EventType;
 import de.disoft.wor.domain.game.HeroPlacement;
 import de.disoft.wor.domain.game.Player;
 import de.disoft.wor.service.WoRGame;
@@ -48,18 +49,21 @@ public class WoRApplication {
             Cards cards = game.getConfiguration().getCards();
 
             // sets up players
-            game.addPlayer("A", new ArrayList<>(cards.getAll()));
-            Player p = game.getPlayers().get(0);
+            Player p = new Player("A", 2000);
+            p.setDeck(new ArrayList<>(cards.getAll()));
+            game.addPlayer(p);
             HeroPlacement placement = new HeroPlacement(p);
             placement.setHeroCard(cards.getNormalHeroes().get(0));
-            game.getBoard().addAssignment(p, placement);
+            game.getEventLane().put(EventType.PlayerPlaceHero, p, placement);
 
-            game.addPlayer("B", new ArrayList<>(cards.getAll()));
+            p = new Player("B", 3000);
+            p.setDeck(new ArrayList<>(cards.getAll()));
+            game.addPlayer(p);
             p = game.getPlayers().get(1);
             placement = new HeroPlacement(p);
             placement.setHeroCard(cards.getGiftedHeroes().get(0));
             placement.setWeaponCard(cards.getWeapons().get(0));
-            game.getBoard().addAssignment(p, placement);
+            game.getEventLane().put(EventType.PlayerPlaceHero, p, placement);
 
             System.out.println(("-------------------\nBOARD\n-------------------"));
             System.out.println("Players:         " + game.getPlayers().size());
@@ -69,7 +73,7 @@ public class WoRApplication {
             System.out.println("------------------------");
             for (Player player : game.getPlayers()) {
                 System.out.println("Player:  " + player.getName());
-                for (HeroPlacement heroPlacement : game.getBoard().getHeroPlacementsForPlayer(player)) {
+                for (HeroPlacement heroPlacement : game.getBoard().getHeroesByPlayer(player)) {
                     System.out.println("    Hero health:  " + heroPlacement.getHealth());
                     System.out.println("    Hero damage:  " + heroPlacement.getDamage());
                     System.out.println("    Hero mana:    " + heroPlacement.getMana());

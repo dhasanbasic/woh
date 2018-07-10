@@ -1,18 +1,17 @@
 package de.disoft.wor.domain.game;
 
-import de.disoft.wor.domain.Ability;
 import de.disoft.wor.domain.card.HeroCard;
 import de.disoft.wor.domain.card.WeaponCard;
+import de.disoft.wor.domain.event.EventData;
 
-public class HeroPlacement {
+public class HeroPlacement implements EventData {
     private Player player;
     private HeroCard heroCard;
     private WeaponCard weaponCard;
+
     private int health;
     private int damage;
     private int mana;
-    private boolean hasWeapon;
-    private Ability weaponAbility;
 
     public HeroPlacement(Player player) {
         this.player = player;
@@ -22,6 +21,10 @@ public class HeroPlacement {
         return player;
     }
 
+    public HeroCard getHeroCard() {
+        return heroCard;
+    }
+
     public void setHeroCard(HeroCard heroCard) {
         this.heroCard = heroCard;
         health = heroCard.getHealth();
@@ -29,10 +32,12 @@ public class HeroPlacement {
         mana = heroCard.getMana();
     }
 
+    public WeaponCard getWeaponCard() {
+        return weaponCard;
+    }
+
     public void setWeaponCard(WeaponCard weaponCard) {
         this.weaponCard = weaponCard;
-        hasWeapon = (weaponCard != null);
-        weaponAbility = hasWeapon ? weaponCard.getAbility() : null;
     }
 
     public int getHealth() {

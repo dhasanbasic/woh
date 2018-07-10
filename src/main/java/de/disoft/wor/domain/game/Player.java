@@ -1,11 +1,12 @@
 package de.disoft.wor.domain.game;
 
 import de.disoft.wor.domain.card.AbstractCard;
+import de.disoft.wor.domain.event.EventData;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
+public class Player implements EventData {
     private String name;
 
     private List<AbstractCard> deck;
