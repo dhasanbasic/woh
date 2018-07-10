@@ -1,6 +1,6 @@
 package de.disoft.wor.domain.game;
 
-import de.disoft.wor.domain.card.AbstractCard;
+import de.disoft.wor.domain.card.Card;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
 public class Player {
     private String name;
 
-    private List<AbstractCard> deck;
+    private List<Card> deck;
 
-    private List<AbstractCard> hand;
+    private List<Card> hand;
 
     private int lifePoints;
 
@@ -30,7 +30,7 @@ public class Player {
         return name;
     }
 
-    public void setDeck(List<AbstractCard> deck) {
+    public void setDeck(List<Card> deck) {
         this.deck = deck;
     }
 

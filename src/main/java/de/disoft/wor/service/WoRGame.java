@@ -1,6 +1,6 @@
 package de.disoft.wor.service;
 
-import de.disoft.wor.domain.card.AbstractCard;
+import de.disoft.wor.domain.card.Card;
 import de.disoft.wor.domain.game.Battle;
 import de.disoft.wor.domain.game.Board;
 import de.disoft.wor.domain.game.Player;
@@ -15,6 +15,7 @@ import java.util.List;
 @Component
 @Scope("prototype")
 public class WoRGame {
+
     private WoRConfiguration configuration;
 
     private List<Player> players;
@@ -51,11 +52,12 @@ public class WoRGame {
         return battle;
     }
 
-    public void addPlayer(String name, List<AbstractCard> deck) {
+    public void addPlayer(String name, List<Card> deck) {
         Player player = new Player(name, configuration.getLifePoints());
         player.setDeck(deck);
         players.add(player);
         board.addPlayer(player);
         battle.addPlayer(player);
     }
+
 }

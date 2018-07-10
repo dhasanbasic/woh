@@ -1,7 +1,7 @@
 package de.disoft.wor.service.loader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.disoft.wor.domain.Races;
+import de.disoft.wor.domain.card.Races;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +31,5 @@ public final class RaceLoader {
     public Races getRaces() {
         return races;
     }
+
 }

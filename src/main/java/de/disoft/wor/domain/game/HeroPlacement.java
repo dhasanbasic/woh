@@ -1,13 +1,13 @@
 package de.disoft.wor.domain.game;
 
-import de.disoft.wor.domain.Ability;
-import de.disoft.wor.domain.card.HeroCard;
-import de.disoft.wor.domain.card.WeaponCard;
+import de.disoft.wor.domain.card.Ability;
+//import de.disoft.wor.domain.card.HeroCard;
+//import de.disoft.wor.domain.card.WeaponCard;
 
 public class HeroPlacement {
     private Player player;
-    private HeroCard heroCard;
-    private WeaponCard weaponCard;
+//    private HeroCard heroCard;
+//    private WeaponCard weaponCard;
     private int health;
     private int damage;
     private int mana;
@@ -22,18 +22,18 @@ public class HeroPlacement {
         return player;
     }
 
-    public void setHeroCard(HeroCard heroCard) {
-        this.heroCard = heroCard;
-        health = heroCard.getHealth();
-        damage = heroCard.getDamage();
-        mana = heroCard.getMana();
-    }
+//    public void setHeroCard(HeroCard heroCard) {
+//        this.heroCard = heroCard;
+//        health = heroCard.getHealth();
+//        damage = heroCard.getDamage();
+//        mana = heroCard.getMana();
+//    }
 
-    public void setWeaponCard(WeaponCard weaponCard) {
-        this.weaponCard = weaponCard;
-        hasWeapon = (weaponCard != null);
-        weaponAbility = hasWeapon ? weaponCard.getAbility() : null;
-    }
+//    public void setWeaponCard(WeaponCard weaponCard) {
+//        this.weaponCard = weaponCard;
+//        hasWeapon = (weaponCard != null);
+//        weaponAbility = hasWeapon ? weaponCard.getAbility() : null;
+//    }
 
     public int getHealth() {
         return health;

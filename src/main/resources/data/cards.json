@@ -1,73 +1,39 @@
 {
-  "normalHeroes": [
+  "cards": [
     {
-      "id": "H001",
-      "name": "Kafal",
-      "description": "Hero from the night.",
+      "type": "NormalHeroCard",
+      "id": "001",
+      "name": "NA",
+      "description": "NA",
       "raceName": "Nocturnal",
       "health": 500,
       "damage": 200,
       "mana": 150
     },
     {
-      "id": "H002",
-      "name": "Bright",
-      "description": "Hero of the daylight.",
-      "raceName": "Daylighter",
-      "health": 600,
-      "damage": 180,
-      "mana": 170
-    }
-  ],
-  "giftedHeroes": [
-    {
-      "id": "H101",
-      "name": "Rem",
-      "description": "A hero with unknown powers.",
+      "type": "GiftedHeroCard",
+      "id": "002",
+      "name": "NA",
+      "description": "NA",
       "raceName": "Enigma",
       "health": 500,
       "damage": 210,
       "mana": 150,
-      "ability" : {
-        "name": "Unknown Power",
-        "description": "Rems rage is raising, so does his damage for 25 points. Costs 25 mana points.",
-        "value": "D+25|M-25"
+      "ability": {
+        "name": "NA",
+        "description": "NA",
+        "pattern": "NA"
       }
     },
     {
-      "id": "H102",
-      "name": "Sirius",
-      "description": "A star hero is born.",
-      "raceName": "Solar",
-      "health": 580,
-      "damage": 185,
-      "mana": 170,
-      "ability" : {
-        "name": "Starstruck",
-        "description": "Sirius summons 25 stars from the sky raising his health 25 points. Costs 20 mana points.",
-        "value": "H+25|M-20"
-      }
-    }
-  ],
-  "weapons": [
-    {
-      "id": "W001",
-      "name": "Rakal",
-      "description": "Arrow of Despair.",
-      "ability" : {
-        "name": "Big Shot",
-        "description": "An arrow of the demon Lucifer is shot at an opponent damaging 50 points. Costs 65 mana points.",
-        "value": "H-50|M-65"
-      }
-    },
-    {
-      "id": "W002",
-      "name": "Xen",
-      "description": "Sword of Revenge.",
-      "ability" : {
-        "name": "Day D",
-        "description": "Each turn the holder of the sword gets damage increased for 10 %. Costs 40 mana points each turn.",
-        "value": "D+10%|M-40"
+      "type": "WeaponCard",
+      "id": "003",
+      "name": "NA",
+      "description": "NA",
+      "ability": {
+        "name": "NA",
+        "description": "NA",
+        "pattern": "NA"
       }
     }
   ]
