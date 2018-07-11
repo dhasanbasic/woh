@@ -1,18 +1,17 @@
 package de.disoft.wor.domain.game;
 
-import de.disoft.wor.domain.card.Ability;
-//import de.disoft.wor.domain.card.HeroCard;
-//import de.disoft.wor.domain.card.WeaponCard;
+import de.disoft.wor.domain.card.Card;
+import de.disoft.wor.service.util.exceptions.PlacementException;
+import de.disoft.wor.service.util.exceptions.ValidatorException;
+import de.disoft.wor.service.validator.CardValidator;
 
 public class HeroPlacement {
+
     private Player player;
-//    private HeroCard heroCard;
-//    private WeaponCard weaponCard;
-    private int health;
-    private int damage;
-    private int mana;
-    private boolean hasWeapon;
-    private Ability weaponAbility;
+
+    private Card heroCard;
+
+    private Card weaponCard;
 
     public HeroPlacement(Player player) {
         this.player = player;
@@ -22,40 +21,41 @@ public class HeroPlacement {
         return player;
     }
 
-//    public void setHeroCard(HeroCard heroCard) {
-//        this.heroCard = heroCard;
-//        health = heroCard.getHealth();
-//        damage = heroCard.getDamage();
-//        mana = heroCard.getMana();
-//    }
-
-//    public void setWeaponCard(WeaponCard weaponCard) {
-//        this.weaponCard = weaponCard;
-//        hasWeapon = (weaponCard != null);
-//        weaponAbility = hasWeapon ? weaponCard.getAbility() : null;
-//    }
-
-    public int getHealth() {
-        return health;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public Card getHeroCard() {
+        return heroCard;
     }
 
-    public int getDamage() {
-        return damage;
+    public void setHeroCard(Card heroCard) throws PlacementException {
+        try {
+            if (CardValidator.isHeroCard(heroCard)) {
+                this.heroCard = heroCard;
+            }
+        } catch (ValidatorException ve) {
+            throw new PlacementException("Hero card cannot be placed.", ve);
+        }
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public Card getWeaponCard() {
+        return weaponCard;
     }
 
-    public int getMana() {
-        return mana;
+    public void setWeaponCard(Card weaponCard) throws PlacementException {
+        try {
+            if (CardValidator.isWeaponCard(weaponCard)) {
+                this.weaponCard = weaponCard;
+            }
+        } catch (ValidatorException ve) {
+            throw new PlacementException("Weapon card cannot be placed.", ve);
+        }
     }
 
-    public void setMana(int mana) {
-        this.mana = mana;
+    @Override
+    public String toString() {
+        return "heroPlacement: { " + player + ", " + heroCard + (weaponCard != null ? ", " + weaponCard : "") + " }";
     }
+
 }

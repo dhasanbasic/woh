@@ -6,19 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
+
     private String name;
 
-    private List<Card> deck;
+    private List<Card> deck = new ArrayList<>();
 
-    private List<Card> hand;
+    private List<Card> hand = new ArrayList<>();
 
     private int lifePoints;
 
     public Player(String name, int lifePoints) {
         this.name = name;
         this.lifePoints = lifePoints;
-        deck = new ArrayList<>();
-        hand = new ArrayList<>();
     }
 
     public void resetPlayer(int lifePoints) {
@@ -30,8 +29,16 @@ public class Player {
         return name;
     }
 
+    public List<Card> getDeck() {
+        return deck;
+    }
+
     public void setDeck(List<Card> deck) {
         this.deck = deck;
+    }
+
+    public List<Card> getHand() {
+        return hand;
     }
 
     public int getLifePoints() {
@@ -44,9 +51,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", lifePoints=" + lifePoints +
-                '}';
+        return "Player: { name = \"" + name + "\", lifePoints = " + lifePoints + " }";
     }
+
 }

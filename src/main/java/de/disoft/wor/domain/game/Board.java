@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Board {
+
     private Map<Player, List<HeroPlacement>> heroesByPlayer;
 
     public Board(int numPlayers) {
@@ -23,4 +24,5 @@ public class Board {
     public List<HeroPlacement> getHeroPlacementsForPlayer(Player player) {
         return heroesByPlayer.get(player);
     }
+
 }

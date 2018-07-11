@@ -52,20 +52,40 @@ public class Card {
         return type;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getRaceName() {
         return raceName;
+    }
+
+    public void setRaceName(String raceName) {
+        this.raceName = raceName;
     }
 
     public Race getRace() {
@@ -80,16 +100,32 @@ public class Card {
         return health;
     }
 
+    public void setHealth(Integer health) {
+        this.health = health;
+    }
+
     public Integer getDamage() {
         return damage;
+    }
+
+    public void setDamage(Integer damage) {
+        this.damage = damage;
     }
 
     public Integer getMana() {
         return mana;
     }
 
+    public void setMana(Integer mana) {
+        this.mana = mana;
+    }
+
     public Ability getAbility() {
         return ability;
+    }
+
+    public void setAbility(Ability ability) {
+        this.ability = ability;
     }
 
     @Override
