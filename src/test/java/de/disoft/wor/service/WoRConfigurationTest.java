@@ -46,7 +46,7 @@ public class WoRConfigurationTest {
 
     @Test
     public void testGetRaces() {
-        Races races = configuration.getRaces();
+        Races races = configuration.getRacesConfiguration();
         assertNotNull(RACES_NOT_NULL, races);
         assertNotNull(RACES_NOT_NULL, races.getRaces());
         assertFalse(RACES_NOT_EMPTY, races.getRaces().isEmpty());
@@ -63,7 +63,7 @@ public class WoRConfigurationTest {
 
     @Test
     public void testGetCards() {
-        Cards cards = configuration.getCards();
+        Cards cards = configuration.getCardsConfiguration();
         assertNotNull(CARDS_NOT_NULL, cards);
         assertNotNull(CARDS_NOT_NULL, cards.getCards());
         assertFalse(CARDS_NOT_EMPTY, cards.getCards().isEmpty());

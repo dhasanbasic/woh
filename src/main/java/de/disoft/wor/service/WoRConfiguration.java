@@ -14,9 +14,9 @@ import javax.annotation.PostConstruct;
 @Component
 public class WoRConfiguration {
 
-    private Races races;
+    private Races racesConfiguration;
 
-    private Cards cards;
+    private Cards cardsConfiguration;
 
     private RaceLoader raceLoader;
 
@@ -33,9 +33,9 @@ public class WoRConfiguration {
 
     @PostConstruct
     protected void loadConfiguration() {
-        races = raceLoader.getRaces();
-        cards = cardLoader.getCards();
-        init(cards, races);
+        racesConfiguration = raceLoader.getRaces();
+        cardsConfiguration = cardLoader.getCards();
+        init(cardsConfiguration, racesConfiguration);
     }
 
     private void init(Cards cards, Races races) {
@@ -52,12 +52,12 @@ public class WoRConfiguration {
         this.cardLoader = cardLoader;
     }
 
-    public Races getRaces() {
-        return races;
+    public Races getRacesConfiguration() {
+        return racesConfiguration;
     }
 
-    public Cards getCards() {
-        return cards;
+    public Cards getCardsConfiguration() {
+        return cardsConfiguration;
     }
 
     public int getNumPlayers() {

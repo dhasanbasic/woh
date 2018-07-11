@@ -21,7 +21,7 @@ public class WoRApplicationTests {
 
     @Test
     public void testRaceLoader() {
-        Races races = configuration.getRaces();
+        Races races = configuration.getRacesConfiguration();
         assertNotNull(races);
         assertNotNull(races.getRaces());
         assertNotNull(races.getRaceByName("Nocturnal"));
@@ -32,7 +32,7 @@ public class WoRApplicationTests {
 
     @Test
     public void testNormalHeroCardLoader() {
-        Cards cards = configuration.getCards();
+        Cards cards = configuration.getCardsConfiguration();
         assertNotNull(cards);
         assertNotNull(cards.getCards());
         Card card = cards.getCardById("001");
@@ -57,7 +57,7 @@ public class WoRApplicationTests {
 
     @Test
     public void testGiftedHeroCardLoader() {
-        Cards cards = configuration.getCards();
+        Cards cards = configuration.getCardsConfiguration();
         assertNotNull(cards);
         assertNotNull(cards.getCards());
         Card card = cards.getCardById("002");
@@ -85,7 +85,7 @@ public class WoRApplicationTests {
 
     @Test
     public void testWeaponCardLoader() {
-        Cards cards = configuration.getCards();
+        Cards cards = configuration.getCardsConfiguration();
         assertNotNull(cards);
         assertNotNull(cards.getCards());
         Card card = cards.getCardById("003");

@@ -2,6 +2,7 @@ package de.disoft.wor.domain.card;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.disoft.wor.domain.card.type.CardType;
 
 public class Card {
 
@@ -89,6 +90,17 @@ public class Card {
 
     public Ability getAbility() {
         return ability;
+    }
+
+    @Override
+    public String toString() {
+        if (type.equals(CardType.NormalHeroCard.toString())) {
+            return "card: { type: \"" + type + "\", id: \"" + "\", name: \"" + name + "\", description: \"" + description + "\", " + race + ", health: " + health + ", damage: " + damage + ", mana: " + mana + " }";
+        } else if (type.equals(CardType.GiftedHeroCard.toString())) {
+            return "card: { type: \"" + type + "\", id: \"" + "\", name: \"" + name + "\", description: \"" + description + "\", " + race + ", health: " + health + ", damage: " + damage + ", mana: " + mana + ", " + ability + " }";
+        } else {
+            return "card: { type: \"" + type + "\", id: \"" + "\", name: \"" + name + "\", description: \"" + description + "\", " + ability + " }";
+        }
     }
 
 }

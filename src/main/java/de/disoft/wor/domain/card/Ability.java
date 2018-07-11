@@ -32,4 +32,9 @@ public class Ability {
         return pattern;
     }
 
+    @Override
+    public String toString() {
+        return "ability: { name: \"" + name + "\", description: \"" + description + "\", pattern: \"" + pattern + "\"}";
+    }
+
 }

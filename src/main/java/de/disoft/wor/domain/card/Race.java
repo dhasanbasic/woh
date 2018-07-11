@@ -32,4 +32,9 @@ public class Race {
         return ability;
     }
 
+    @Override
+    public String toString() {
+        return "race: { name: \"" + name + "\", description: \"" + description + "\", " + ability + " }";
+    }
+
 }
