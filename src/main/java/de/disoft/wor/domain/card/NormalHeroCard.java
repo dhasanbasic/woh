@@ -36,6 +36,10 @@ public class NormalHeroCard extends AbstractCard {
         this.attack = attack;
     }
 
+    public Integer getDefense() {
+        return defense;
+    }
+
     public void setDefense(Integer defense) {
         this.defense = defense;
     }
