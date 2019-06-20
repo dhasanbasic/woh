@@ -1,6 +1,6 @@
 package de.disoft.wor.domain.card;
 
-import de.disoft.wor.util.enumerations.CardType;
+import de.disoft.wor.util.enumeration.CardType;
 
 public class NormalHeroCard extends AbstractCard {
 
@@ -8,7 +8,7 @@ public class NormalHeroCard extends AbstractCard {
     private Integer attack;
     private Integer defense;
 
-    NormalHeroCard(Integer id, String name, String description, Integer health, Integer attack, Integer defense) {
+    public NormalHeroCard(Integer id, String name, String description, Integer health, Integer attack, Integer defense) {
         super(id, name, description);
         this.health = health;
         this.attack = attack;

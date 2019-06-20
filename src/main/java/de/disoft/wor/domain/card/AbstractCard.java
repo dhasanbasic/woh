@@ -1,8 +1,10 @@
 package de.disoft.wor.domain.card;
 
-import de.disoft.wor.util.enumerations.CardType;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import de.disoft.wor.mapper.CardMapper;
+import de.disoft.wor.util.enumeration.CardType;
 
-
+@JsonDeserialize(using = CardMapper.class)
 public abstract class AbstractCard {
 
     private Integer id;
@@ -11,7 +13,7 @@ public abstract class AbstractCard {
 
     public abstract CardType getType();
 
-    AbstractCard(Integer id, String name, String description) {
+    protected AbstractCard(Integer id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;

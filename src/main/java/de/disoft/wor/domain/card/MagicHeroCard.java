@@ -1,6 +1,6 @@
 package de.disoft.wor.domain.card;
 
-import de.disoft.wor.util.enumerations.CardType;
+import de.disoft.wor.util.enumeration.CardType;
 
 public class MagicHeroCard extends NormalHeroCard {
 
